@@ -1,0 +1,11 @@
+databaseChangeLog:
+    - changeSet:
+        id: sql_file_db
+        author: rivosarmento
+        changes:
+            - sqlFile:
+                dbms: 'sqlite'
+                endDelimiter: \nGO
+                splitStatements: true
+                path: db/sample.db
+                stripComments: true
