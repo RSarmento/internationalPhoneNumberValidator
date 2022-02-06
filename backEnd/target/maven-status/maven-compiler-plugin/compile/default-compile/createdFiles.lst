@@ -1,9 +1,0 @@
-pt/jumia/phonevalidator/dialect/SQLiteIdentityColumnSupport.class
-pt/jumia/phonevalidator/service/PhoneValidatorService.class
-pt/jumia/phonevalidator/dto/PhoneValidatorDto.class
-pt/jumia/phonevalidator/domain/Customer.class
-pt/jumia/phonevalidator/service/impls/PhoneValidatorServiceImpl.class
-pt/jumia/phonevalidator/dialect/SQLiteDialect.class
-pt/jumia/phonevalidator/controller/InternationalPhoneNumberValidatorController.class
-pt/jumia/phonevalidator/PhoneValidatorApplication.class
-pt/jumia/phonevalidator/repository/CustomerRepository.class

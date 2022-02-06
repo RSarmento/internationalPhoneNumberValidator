@@ -1,11 +1,20 @@
 import React from "react";
 import {Phone} from "../model/phone";
+import {ItemService} from "../services/item.service"
 
 type Props = {
     item: Phone
+    // ,
+    // itemService: ItemService
 }
-export default ({item}: Props) => {
 
+
+export default ({item}: Props
+                // , {itemService}: Props
+) => {
+
+    const pageable = ""
+    // itemService.getAll(pageable);
     return (
         <div>
             <span>{item.countryCode}</span>
