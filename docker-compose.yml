@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  api:
+    build:
+      context: ./backEnd/
+      dockerfile: DockerFile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backEnd:/app
+    networks:
+      - jumia-network
+  web:
+    build:
+      context: ./frontEnd/
+      dockerfile: DockerFile
+    volumes:
+      - ./frontEnd:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - jumia-network
+    depends_on:
+      - api
+networks:
+  jumia-network:
+    driver: bridge

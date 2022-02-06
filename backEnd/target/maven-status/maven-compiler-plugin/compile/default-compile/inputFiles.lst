@@ -1,0 +1,11 @@
+/app/src/main/java/pt/jumia/phonevalidator/dialect/SQLiteIdentityColumnSupport.java
+/app/src/main/java/pt/jumia/phonevalidator/service/impls/InternationalPhoneCategorizeServiceImpl.java
+/app/src/main/java/pt/jumia/phonevalidator/domain/Customer.java
+/app/src/main/java/pt/jumia/phonevalidator/dto/PhoneDto.java
+/app/src/main/java/pt/jumia/phonevalidator/service/InternationalPhoneCategorizeService.java
+/app/src/main/java/pt/jumia/phonevalidator/controller/InternationalPhoneCategorizeController.java
+/app/src/main/java/pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum.java
+/app/src/main/java/pt/jumia/phonevalidator/config/WebConfig.java
+/app/src/main/java/pt/jumia/phonevalidator/PhoneValidatorApplication.java
+/app/src/main/java/pt/jumia/phonevalidator/dialect/SQLiteDialect.java
+/app/src/main/java/pt/jumia/phonevalidator/repository/CustomerRepository.java

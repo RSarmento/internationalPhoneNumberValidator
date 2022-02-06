@@ -1,0 +1,16 @@
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum$2.class
+pt/jumia/phonevalidator/dialect/SQLiteIdentityColumnSupport.class
+pt/jumia/phonevalidator/dto/PhoneDto.class
+pt/jumia/phonevalidator/service/InternationalPhoneCategorizeService.class
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum.class
+pt/jumia/phonevalidator/controller/InternationalPhoneCategorizeController.class
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum$3.class
+pt/jumia/phonevalidator/domain/Customer.class
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum$5.class
+pt/jumia/phonevalidator/dialect/SQLiteDialect.class
+pt/jumia/phonevalidator/config/WebConfig.class
+pt/jumia/phonevalidator/PhoneValidatorApplication.class
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum$4.class
+pt/jumia/phonevalidator/repository/CustomerRepository.class
+pt/jumia/phonevalidator/service/impls/InternationalPhoneCategorizeServiceImpl.class
+pt/jumia/phonevalidator/validatorEnum/CountryNumberValidatorEnum$1.class

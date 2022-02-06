@@ -1,0 +1,10 @@
+FROM node:14.18.2
+
+WORKDIR /app
+
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+EXPOSE 3000
+
+ENTRYPOINT ["sh", "entrypoint.sh"]
