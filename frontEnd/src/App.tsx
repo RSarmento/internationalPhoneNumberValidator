@@ -5,17 +5,17 @@ import {Phone} from "./model/phone";
 import {ItemService} from "./services/item.service";
 
 function App() {
-    const [items, setItems] = useState<Phone[]>([]);
-    const [hasNext, setHasNext] = useState(true);
-    const [nextPage, setNextPage] = useState(0);
+    const [items, setItems] = useState<Phone[]>([])
+    const [hasNext, setHasNext] = useState(true)
+    const [nextPage, setNextPage] = useState(0)
     const [isSearching, setIsSearching] = useState(false)
 
-    const [searchValue, setSearchValue] = useState("");
-    const [isValid, setIsValid] = useState(false);
+    const [searchValue, setSearchValue] = useState("")
+    const [isValid, setIsValid] = useState(false)
 
     const getAll = () => {
         if (isSearching) {
-            new ItemService().getPage({page: 0}).then(res => {
+            new ItemService().getCategorize({page: 0}).then(res => {
                 setItems(res.content);
                 setHasNext(!res.last);
                 setNextPage(res.number + 1);
@@ -23,7 +23,7 @@ function App() {
             setIsSearching(false)
         }
         if (hasNext) {
-            new ItemService().getPage({page: nextPage}).then(res => {
+            new ItemService().getCategorize({page: nextPage}).then(res => {
                 setItems((oldItems) => {
                     oldItems.push(...res.content);
                     return oldItems;
@@ -35,34 +35,34 @@ function App() {
     }
     const getByCountryAndState = () => {
         if (!isSearching) {
-            new ItemService().getByCountryAndState({country: searchValue, state: isValid, page: 0})
+            new ItemService()
+                .getCategorizeByCountryAndState({country: searchValue, state: isValid, page: 0})
                 .then(res => {
                     setItems(res.content);
                     setHasNext(!res.last);
-                    setNextPage(res.number + 1);
+                    setNextPage(res.number + 1)
                 })
             setIsSearching(true)
             return
         }
         if (hasNext) {
-            new ItemService().getByCountryAndState({country: searchValue, state: isValid, page: nextPage})
+            new ItemService()
+                .getCategorizeByCountryAndState({country: searchValue, state: isValid, page: nextPage})
                 .then(res => {
                     setItems((oldItems) => {
-                        oldItems.push(...res.content);
-                        return oldItems;
+                        oldItems.push(...res.content)
+                        return oldItems
                     });
-                    setHasNext(!res.last);
-                    setNextPage(res.number + 1);
+                    setHasNext(!res.last)
+                    setNextPage(res.number + 1)
                 })
         }
     }
-
     const cleanStates = () => {
         setItems([])
         setHasNext(true)
         setNextPage(0)
     }
-
     useEffect(() => {
         cleanStates()
         getAll()
@@ -77,7 +77,10 @@ function App() {
                 getByCountryAndState()
             }}>
                 <div className="flex gap-2 self-stretch">
-                    <input className="grow p-2 border rounded self-stretch" type="text" placeholder={"Country here"} value={searchValue}
+                    <input className="grow p-2 border rounded self-stretch"
+                           type="text"
+                           placeholder={"Country here"}
+                           value={searchValue}
                            onChange={(e) => {
                                if(!e.target.value) {
                                    getAll()
@@ -85,8 +88,8 @@ function App() {
                                setSearchValue(e.target.value)
                                setIsSearching(false)
                            }}/>
-
-                    <select className="p-2 rounded" name="state" value={isValid ? "valid" : "invalid"} onChange={(e) => {
+                    <select className="p-2 rounded" name="state"
+                            value={isValid ? "valid" : "invalid"} onChange={(e) => {
                         setIsSearching(false)
                         setIsValid(e.target.value === "valid")
                     }}>
@@ -115,5 +118,4 @@ function App() {
         </div>
     );
 }
-
-export default App;
+export default App

@@ -4,7 +4,7 @@ import {Phone} from "../model/phone";
 type Props = {
     items: Phone[]
 }
-export default ({items}: Props) => {
+const list = ({items}: Props) => {
     return (
         <div className="self-stretch">
             {items.map(item => {
@@ -15,3 +15,4 @@ export default ({items}: Props) => {
         </div>
     )
 }
+export default list

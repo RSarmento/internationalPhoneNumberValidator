@@ -1,7 +1,6 @@
 import axios from "axios";
 import {Phone} from "../model/phone";
 
-
 export interface Pageable{
     content: Phone[],
     last: boolean,
@@ -10,21 +9,20 @@ export interface Pageable{
 export interface GetParams{
     page: number
 }
-
 export interface GetParamsByCountryAndState {
     country: string,
     page: number,
     state: boolean
 }
-
 export class ItemService{
-    getAll(){
-        return axios.get<Pageable>("http://localhost:8080/api/v1/categorize").then(res => res.data);
+    getCategorize(params: GetParams){
+        return axios
+            .get<Pageable>("http://localhost:8080/api/v1/categorize", {params})
+            .then(res => res.data)
     }
-    getPage(params: GetParams){
-        return axios.get<Pageable>("http://localhost:8080/api/v1/categorize", {params}).then(res => res.data);
-    }
-    getByCountryAndState(params: GetParamsByCountryAndState) {
-        return axios.get<Pageable>("http://localhost:8080/api/v1/categorize/byCountryAndState", {params} ).then(res => res.data);
+    getCategorizeByCountryAndState(params: GetParamsByCountryAndState) {
+        return axios
+            .get<Pageable>("http://localhost:8080/api/v1/categorize/byCountryAndState", {params} )
+            .then(res => res.data)
     }
 }
